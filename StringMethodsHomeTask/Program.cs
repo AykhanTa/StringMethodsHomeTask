@@ -30,6 +30,18 @@ namespace StringMethodsHomeTask
 
             //Console.WriteLine(ReversedString("salam"));
 
+            //int a = int.Parse(Console.ReadLine());
+            //int b = int.Parse(Console.ReadLine());
+            //Console.WriteLine(PowerOfNumbers(a,b));
+
+            //string word = "abc + cba * asd ///asdas";
+            //char[] arr = {'+','*','/'};
+            //Console.WriteLine(SumOfSymbols(word, arr));
+
+            //ToPositiveOfMinus(2, -3, 4, -5, 7);
+
+                   
+
         }
 
         static void ShowMenu()
@@ -41,6 +53,22 @@ namespace StringMethodsHomeTask
             Console.WriteLine("4.Bolme ");
             Console.WriteLine("5.Sonlandir ");
 
+        }
+
+        static int SumOfSymbols(string word, char[] arr)
+        {
+            int count = 0;
+            for (int i = 0; i < word.Length; i++)
+            {
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (word[i] == arr[j])
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
         }
         static void OperationsSwitchCase(string c)
         {
@@ -94,7 +122,30 @@ namespace StringMethodsHomeTask
             return sum;
         }
 
+        static int PowerOfNumbers(int a,int b)
+        {
+            int quvvet = 1;
+            for (int i = 0; i < b; i++)
+            {
+                quvvet *= a;
+            }
+            return quvvet;
+        }
 
+        static void ToPositiveOfMinus(params int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i]<0)
+                {
+                    arr[i] *= -1;
+                }
+            }
+            foreach (int item in arr)
+            {
+                Console.Write(item+" ");
+            }
+        }
 
         static string ReversedString(string word)
         {
